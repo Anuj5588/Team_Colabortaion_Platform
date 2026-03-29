@@ -7,13 +7,8 @@ app.use(express.json())
  setuproutes(app)
 configdb();
 
-export const port =8000;
+export const port =5000
 
-
-
-app.get('/',(req,res)=>{
-    res.send("hello from the express")
-})
  setuproutes(app)
 
 
