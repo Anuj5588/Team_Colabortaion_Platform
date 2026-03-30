@@ -1,10 +1,17 @@
 import Task from "../models/Task.js";
 
-export const   createTask= async (title, description, status, priority,user)=>{
+export const   createTask= async (data)=>{
+    console.log(data)
 
-    const task = await Task.create({title, description, status, priority,user})
+    const task = await Task.create(data)
 
     return task
 
 
+}
+
+export const  getTask = async (data)=>{
+
+    const task = await Task.find({data})
+    return task
 }

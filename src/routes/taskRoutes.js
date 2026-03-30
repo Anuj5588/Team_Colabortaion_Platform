@@ -5,7 +5,8 @@ import { jwtMiddleWare } from '../middleware/authMiddleware.js'
 
 const router = express.Router()
 
-router.post('/create-task',jwtMiddleWare,taskController.createTask)
+router.post('/create-task/:id',jwtMiddleWare,taskController.createTask)
+router.get('get-all-task/:id', jwtMiddleWare, taskController.getAllTask )
 
 
 

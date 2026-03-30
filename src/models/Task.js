@@ -4,7 +4,7 @@ const {Schema} = mongoose;
 
 const task = new Schema({
     title:{type:String, },
-    discriotion:{type:String},
+    discription:{type:String},
 
 status: {
     type: String,

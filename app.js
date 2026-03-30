@@ -7,7 +7,7 @@ app.use(express.json())
  setuproutes(app)
 configdb();
 
-export const port =5000
+export const port =8000
 
  setuproutes(app)
 
