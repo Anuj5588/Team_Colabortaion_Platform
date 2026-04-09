@@ -1,5 +1,5 @@
 import { get } from "mongoose"
-import { createTask, getTask } from "../services/TaskService.js"
+import { createTask, getTask ,getSingleTask} from "../services/TaskService.js"
 class TaskController  {
 
   async   createTask(req,res){
@@ -40,7 +40,8 @@ class TaskController  {
             })
          }else{
             return res.status(200).json({
-                Success:"task founded"
+                Success:"task founded",
+                allTask
             })
          }
 
@@ -49,6 +50,21 @@ class TaskController  {
     }catch(err){
         console.log(err)
     }
+
+}
+
+async getSinleTask(req,res){
+    console.log("Hello")
+     const {id} = req.params
+
+     const singleTask = await getSingleTask(id)
+     console.log("hello2")
+     if(singleTask){
+
+        return res.json({ singleTask
+        })
+
+     }
 
 }
 

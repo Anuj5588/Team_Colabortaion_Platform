@@ -11,7 +11,8 @@ export const  getTask = async (data)=>{
 }
 
 export const  getSingleTask = async (data)=>{
-    const task = await Task.findById({data})
+    console.log(data)
+    const task = await Task.findById(data)
     return task
 }
 
@@ -31,7 +32,7 @@ export const  updateTaskStatus = async (data)=>{
 }
 
 export const  assignTask = async (data)=>{
-    const task = await Task({data})
+    const task = await Task(data)
     return task
 }
 
