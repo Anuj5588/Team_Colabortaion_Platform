@@ -8,6 +8,7 @@ const router = express.Router()
 router.post('/create-task/:id',jwtMiddleWare,taskController.createTask)
 router.get('/get-all-task/:id', jwtMiddleWare, taskController.getAllTask )
 router.get('/get-single-task/:id', taskController.getSinleTask )
+router.put('/delete-task/:id', taskController.deleteSingleTask )
 
 
 

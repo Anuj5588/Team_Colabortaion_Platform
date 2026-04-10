@@ -16,6 +16,10 @@ status: {
     type: String,
     enum: ["low", "medium", "high"]
   },
+  isDeleted:{
+   type:Boolean,
+   default:false
+  },
   assignedTo: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User"

@@ -1,5 +1,5 @@
 import { get } from "mongoose"
-import { createTask, getTask ,getSingleTask} from "../services/TaskService.js"
+import { createTask, getTask ,getSingleTask,deleteTask} from "../services/TaskService.js"
 class TaskController  {
 
   async   createTask(req,res){
@@ -54,7 +54,9 @@ class TaskController  {
 }
 
 async getSinleTask(req,res){
-    console.log("Hello")
+
+
+    try{
      const {id} = req.params
 
      const singleTask = await getSingleTask(id)
@@ -65,6 +67,39 @@ async getSinleTask(req,res){
         })
 
      }
+    }catch(err){
+
+        res.json(err)
+
+    }
+
+}
+
+
+async deleteSingleTask(req,res){
+
+      try{
+     const {id} = req.params
+     console.log(id)
+     const deleteSingleTask= await deleteTask({Id:id})
+     console.log("controleer",deleteSingleTask)
+
+
+      if (!deleteSingleTask) {
+      return res.status(404).json({
+        message: "Task not found"
+      });
+    }
+     if(deleteSingleTask){
+        return res.json({ Success:"task deleted"
+        })
+
+     }
+    }catch(err){
+
+        res.json(err)
+
+    }
 
 }
 
