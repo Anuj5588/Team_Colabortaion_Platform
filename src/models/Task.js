@@ -28,7 +28,7 @@ status: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User"
   },
-  dueDate: Date
-}, { timestamps: true });
+
+}, { timestamps: true ,versionKey:false});
 
 export default mongoose.model("Task", task)

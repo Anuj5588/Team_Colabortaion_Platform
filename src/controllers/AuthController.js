@@ -2,19 +2,21 @@
 import jwt from 'jsonwebtoken'
 import User from '../models/User.js';
 
+
 import { createUser,findUser } from './../services/AuthService.js';
 
 class AuthController{
     async register(req,res){
         try{
             const {name, email,password}=req.body
-           const checkUser = findUser({email})
-           if(checkUser){
-            return res.status(401).json({
-                Error:"User already exist"
-            })
-           }
-            const user = createUser(name,email,password)
+          
+        //    const checkUser = findUser({email})
+        //    if(checkUser){
+        //     return res.status(401).json({
+        //         Error:"User already exist"
+        //     })
+        //    }
+            const user = createUser({name,email,password})
              return res.status(201).json({
         success: true,
         user

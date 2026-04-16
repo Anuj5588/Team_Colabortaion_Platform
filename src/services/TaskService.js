@@ -23,10 +23,8 @@ export const  UpdateTask = async (data)=>{
 
 export const  deleteTask = async (data)=>{
     console.log(data)
-    const task = await Task.findOneAndUpdate( data,
-    { isDeleted: true },
+    const task = await Task.findByIdAndUpdate(data,{ isDeleted: true },
      { returnDocument: "after" })
-    console.log(task)
     return task
 }
  

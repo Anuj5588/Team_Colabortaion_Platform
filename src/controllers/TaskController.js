@@ -60,7 +60,6 @@ async getSinleTask(req,res){
      const {id} = req.params
 
      const singleTask = await getSingleTask(id)
-     console.log("hello2")
      if(singleTask){
 
         return res.json({ singleTask
@@ -77,14 +76,9 @@ async getSinleTask(req,res){
 
 
 async deleteSingleTask(req,res){
-
       try{
      const {id} = req.params
-     console.log(id)
-     const deleteSingleTask= await deleteTask({Id:id})
-     console.log("controleer",deleteSingleTask)
-
-
+     const deleteSingleTask= await deleteTask(id)
       if (!deleteSingleTask) {
       return res.status(404).json({
         message: "Task not found"

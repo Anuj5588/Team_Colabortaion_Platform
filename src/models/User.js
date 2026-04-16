@@ -9,6 +9,7 @@ const user = new Schema({
     mobileNumber:{type:String,},
     age:{type:Number,},
     dateOfBirth:{type:Number,},
+    password:{type:String}
   
 
 })
