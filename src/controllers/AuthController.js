@@ -30,8 +30,7 @@ class AuthController{
 async login(req,res){
 const {email} =req.body
     const user = await User.findOne({email})
-  console.log(user)
-      const token = jwt.sign({id:user._id, email },"hello" )
+      const token = jwt.sign({_id:user._id, email },"hello" )
 
      if(!token){
         res.status(404).json({
