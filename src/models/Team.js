@@ -18,6 +18,7 @@ const teamSchema = new mongoose.Schema({
     required: true,
     trim: true
   },
+ 
   members: [memberSchema],
   createdBy: {
     type: mongoose.Schema.Types.ObjectId,
